@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> Titanic </title>
+
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: whitesmoke;
+       }
+  </style>
+</head>
+
+
+<body class="center">
+<div style="border: 2px solid black; border-radius: 10%; padding: 20px; margin: 20px; margin-top: 80px;">
+
+  <h1 style="color:black; font-weight: 700;">
+    <i class="fas fa-ship"></i> Breast Cancer Detection 
+  </h1>
+
+  <p style="color:black; font-weight: 700;">
+    What is the probablity of having Breast Cancer?
+  </p>
+<hr>
+  <form action="result" method="get">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Clump Thickness(between 1 and 10)" required type="number" min="1" max="10" name="ct">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Uniformity of Cell Size(between 1 and 10)" required type="number" min="1" max="10" name="ucs">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Uniformity of Cell Shape(between 1 and 10)" required
+       type="number" min="1" max="10" name="uch">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Marginal Adhesion(between 1 and 10)" required
+       type="number" min="1" max="10" name="ma">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Single Epithelial Cell Size(between 1 and 10)"
+      type="number" min="1" max="10" required name="ses">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Bare Nuclei(between 1 and 10)" required\
+      min="1" max="10" type="number" name="ba">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Bland Chromatin(between 1 and 10)" required
+       type="number" min="1" max="10" name="embC" id="bc">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Normal Nucleoli(between 1 and 10)" required
+       type="number" min="1" max="10" name="embQ" id="nn">
+    </div>
+
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Mitoses(between 1 and 10)" required
+       type="number" min="1" max="10" name="embS" id="mio">
+    </div>
+
+    <hr>
+
+    <input class="btn btn-primary btn-lg" type="submit" onclick="myFunction()==true" value='Predict'>
+    <input class="btn btn-danger btn-lg" type="reset" value='Reset'>
+
+  </form>
+
+</div>
+</body>
+
+</html>

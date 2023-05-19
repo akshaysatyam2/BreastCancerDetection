@@ -12,9 +12,9 @@ def getPredictions(ct, ucs, uch, ma, ses, ba, bc, nn, mio):
     ])
     print(prediction)
     if prediction == 2:
-        return 'low'
+        return 0
     elif prediction == 4:
-        return 'high'
+        return 1
     else:
         return 'error'
 
